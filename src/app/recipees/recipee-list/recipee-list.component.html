@@ -1,3 +1,24 @@
-<p>
-  recipee-list works!
-</p>
+<div class="row">
+    <div class="col-xs-12">
+        <button class="btn btn-success">New Recipee</button>
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="class-xs-12">
+        <a href="#" class="list-group-item clearfix"
+        *ngFor="let recipee of recipees">
+            <div class="pull-left">
+                <h4 class="list-group-item-heading">Name: {{recipee.name}}</h4>
+                <p class="list-group-item-text">{{recipee.description}}</p>
+            </div>
+            <span class="pull-right">
+                <img [src]=recipee.imagePath 
+                     alt="{{recipee.name}}" 
+                     class="image-responsive" 
+                     style="max-height: 50px;">
+            </span>
+        </a>
+        <app-recipee-item></app-recipee-item>
+    </div>
+</div>
